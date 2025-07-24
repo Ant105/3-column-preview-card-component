@@ -27,6 +27,11 @@ html {
 
 body {
   background-color: var(--background-clr);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
 }
 
 /* I couldn't find the exact font, but this is the closest one I found */
@@ -48,7 +53,7 @@ body {
   font-display: swap;
 }
 
-/* for h1 */
+/* For an h1, I added the h1 for accessibility and SEO */
 .visually-hidden {
   position: absolute;
   width: 1px;
@@ -61,13 +66,6 @@ body {
   border: 0;
 }
 
-body {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-}
-
 .wrapper {
   display: grid;
   grid-template-columns: 1fr;
@@ -78,6 +76,8 @@ body {
   margin-top: 2em;
 }
 
+/* You can change the size of the cards by adjusting the font-size, 
+and this shouldn't affect their appearance other than their size */
 .card {
   font-size: 1.6rem;
   width: 20.43em;
@@ -192,6 +192,8 @@ body {
   background-color: var(--card3-clr);
 }
 
+/* I recommend avoiding pixels in media queries throughout the code, 
+because it can cause horizontal scrolling for users with large font settings */
 @media (max-width: 21em) {
   .card {
     font-size: 1.4rem;
@@ -229,6 +231,7 @@ body {
   .wrapper {
     grid-template-columns: repeat(3, 1fr);
     grid-template-areas: "sedans suvs luxury";
+    margin-top: 0.5em;
   }
 
   .card {
